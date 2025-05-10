@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 215 14% 18%; /* #2D3436 */
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 14% 18%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 14% 18%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 359 100% 70.6%; /* #FF6B6B */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 174 65% 56%; /* #4ECDC4 */
+  --secondary-foreground: 215 14% 18%;
+  --accent: 210 3% 62%; /* #95A5A6 */
+  --accent-foreground: 215 14% 18%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 215 14% 18%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 359 100% 70.6%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 174 65% 56%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 210 3% 62%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Transition animations */
+.slide-enter {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 400ms, transform 400ms;
+}
+.slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.progress-bar-transition {
+  transition: width 0.4s ease-in-out;
+}
